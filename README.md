@@ -1,4 +1,4 @@
-![图片](../picture/github.jpg)
+![图片](./picture/github.jpg)
 
 # 后台开发核心知识
 
