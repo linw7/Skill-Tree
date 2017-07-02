@@ -1,4 +1,4 @@
-![](http://oo8jzybo8.bkt.clouddn.com/hello-github.jpg)
+![图片](../picture/github.jpg)
 
 # 后台开发核心知识
 
