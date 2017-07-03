@@ -8,21 +8,67 @@
 
 ---
 
-## 目录
-
----
+# 目录
 
 | Chapter 1 | Chapter 2 | Chapter 3| Chapter 4 |Chapter 5|
 | :---------: | :---------: | :---------: | :--------: |:--------:|
 |[开发及调试](#pro)|[文件处理](#file)|[性能分析](#sysinfo)|[网络工具](#net)|[其他](#other)|
 
+- 开发及调试
+
+    - 编辑器：vim
+    - 编译器：gcc/g++
+    - 调试工具：gdb
+    - 查看依赖库：ldd
+    - 二进制文件分析：objdump
+    -  ELF文件格式分析：readelf
+    - 跟踪进程中系统调用：strace
+    - 跟踪进程栈：pstack
+    
+- 文件处理
+    - 文件查找：find
+    - 文本搜索：grep
+    - 排序：sort
+    - 转换：tr
+    - 按列切分文本：cut
+    - 按列拼接文本：paste
+    - 统计行和字符：wc
+    - 文本替换：sed
+    - 数据流处理：awk
+
+- 性能分析
+    - 进程查询：ps
+    - 进程监控：top
+    -  打开文件查询：lsof
+    - 内存使用量：free
+    - 监控性能指标：sar
+
+- 网络工具
+    - 网卡配置：ifconfig 
+    - 查看当前网络连接：netstat
+    - 查看路由表：route
+    - 检查网络连通性：ping
+    - 转发路径：traceroute
+    - 网络Debug分析：nc
+    - 命令行抓包：tcpdump
+    - 域名解析工具：dig
+    - 网络请求：curl
+
+- 其他
+    - 终止进程：kill
+    - 修改文件权限：chmod
+    - 创建链接：ln
+    - 显示文件尾：tail
+    - 版本控制：git
+    - 设置别名：alias
+
 ---
 
-## 内容
-
----
+# 内容
 
 ### <span id = "pro">开发及调试</span>
+
+> 开发工具大部分都提供了完善的功能，所以这里不一一列举用法。从技术层面来说，调试工具比开发工具更考验一个人的工程能力。
 
 1. 编辑器：vim
     - 服务器端开发必知必会，功能强大，这里不一一列举，但基本的打开文件、保存退出要会。
@@ -62,6 +108,7 @@
 ---
 
 ### <span id = "file">文件处理</span>
+
 > Everything is file. 在Linux环境下，对文本处理相当频繁，所以有些命令的参数还是需要记忆的。另外其他很多命令的输出信息都需要通过文件处理命令来筛选有用信息。
 
 1. 文件查找：find
@@ -278,7 +325,7 @@
     lsof +d /test
     ```
 
-5. 内存使用量：free
+4. 内存使用量：free
     - 内存使用量
     ```shell
     # 可获得内存及交换区的总量，已使用量，空闲量等信息
@@ -286,7 +333,7 @@
     free
     ```
 
-6. 监控性能指标：sar
+5. 监控性能指标：sar
 
     监控CPU
     - 监控CPU负载
@@ -431,7 +478,7 @@
     traceroute baidu.com
     ``` 
 
-7. 网络Debug分析：nc
+6. 网络Debug分析（网络层/传输层）：nc
     - 端口扫描
     ```shell
     # 黑客很喜欢
@@ -445,9 +492,11 @@
 
     - [其他详见](https://www.oschina.net/translate/linux-netcat-command)
 
-8. 命令行抓包（网络层/传输层）：tcpdump
+7. 命令行抓包（网络层/传输层）：tcpdump
+    - 抓包利器，没有什么比数据更值得信赖。可以跟踪整个传输过程。
+    - [详见](http://www.cnblogs.com/ggjucheng/archive/2012/01/14/2322659.html)
 
-9. 域名解析工具（应用层DNS协议）：dig
+8. 域名解析工具（应用层DNS协议）：dig
     ```shell
     # 应用层，DNS
     # 打印域名解析结果
@@ -456,8 +505,10 @@
     dig baidu.com
     ```
 
-10. 模拟请求（应用层）：curl
+9. 网络请求（应用层）：curl
+    - [详见](http://www.cnblogs.com/gbyukg/p/3326825.html)
 
+---
 
 ### <span id = "other">其他</span>
 
