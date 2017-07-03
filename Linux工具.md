@@ -24,6 +24,7 @@
     -  ELF文件格式分析：readelf
     - 跟踪进程中系统调用：strace
     - 跟踪进程栈：pstack
+    - 进程内存映射：pmap
     
 - 文件处理
     - 文件查找：find
@@ -104,6 +105,22 @@
 
 9. 跟踪进程栈：pstack
     - [详见](http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/pstack.html#)
+
+10. 进程内存映射：pmap
+    - 显示进程内存映射
+    ```shell
+    # -x显示扩展信息，后接进程pid
+    # Address: 内存开始地址
+    # 显示信息：
+        Kbytes: 占用内存的字节数
+        RSS: 保留内存的字节数
+        Dirty: 脏页的字节数（包括共享和私有的）
+        Mode: 内存的权限：read、write、execute、shared、private
+        Mapping: 占用内存的文件、或[anon]（分配的内存）、或[stack]（堆栈）
+        Device: 设备名 (major:minor)
+
+    pmap -x 12345
+    ```
 
 ---
 
@@ -267,7 +284,8 @@
 ---
 
 ### <span id = "sysinfo">系统信息</span>
-> 系统信息主要针对于服务器性能较低时的排查工作，主要包括CPU信息，文件I/O和内存使用情况，通过进程为纽带得到系统运行的瓶颈。
+
+> 性能监视工具对于程序员的作用就像是听诊器对于医生的作用一样。系统信息主要针对于服务器性能较低时的排查工作，主要包括CPU信息，文件I/O和内存使用情况，通过进程为纽带得到系统运行的瓶颈。
 
 1. 进程查询：ps
     - 查看正在运行进程
