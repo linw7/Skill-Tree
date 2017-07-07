@@ -1,3 +1,3 @@
-![图片](./github.jpg)
+![图片](/picture/github.jpg)
 
 基础代码实现。
