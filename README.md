@@ -1,4 +1,4 @@
-![图片](./picture/github.jpg)
+![图片](./source/github.jpg)
 
 # 后台开发核心知识
 
@@ -24,6 +24,12 @@
 # 其他
 
 > 路过的豪杰麻烦右上角点一个star !
+
+更新同步问题：
+
+[gitlab或github下fork后如何同步源的新更新内容？](https://www.zhihu.com/question/28676261)
+
+
 
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
