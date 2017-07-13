@@ -79,6 +79,9 @@
     - 注意对指针的操作，typedef char * p_char和#define p_char char *区别巨大。
 
 13. 宏定义和内联函数(inline)区别？
+    - 在使用时，宏只做简单字符串替换（编译前）。而内联函数可以进行参数类型检查（编译时），且具有返回值。
+    - 内联函数本身是函数，强调函数特性，具有重载等功能。
+    - 内联函数可以作为某个类的成员函数，这样可以使用类的保护成员和私有成员。而当一个表达式涉及到类保护成员或私有成员时，宏就不能实现了。
 
 14. 条件编译#ifdef, #else, #endif作用？
     - 可以通过加#define，并通过#ifdef来判断，将某些具体模块包括进要编译的内容。
@@ -211,127 +214,6 @@
 
 ### <span id = "stl">标准模板库</span>
 
-**容器**
-
-序列式容器
-
-1. string
-
-2. vector
-
-    特性
-
-        1. 支持随机访问
-        2. 支持空间动态扩展
-        3. 插入删除元素代价高
-
-    基本操作
-
-        1. push_back
-        2. pop_back
-        3. insert
-        4. find
-        5. erase
-        6. clear
-
-3. deque
-
-    特性
-
-        1. 支持随机访问
-        2. 支持空间动态扩展
-        3. 插入删除元素代价高
-        4. 支持两端快速增删
-
-    基本操作
-
-        1. pop_back
-        2. pop_front
-        3. insert
-        4. erase
-        5. clear
-4. array
-
-5. list
-
-    特性
-
-        1. 不支持随机访问
-
-    基本操作
-
-        1. push_back
-        2. pop_back
-        3. push_front
-        4. push_front
-        5. merge
-        6. reverse
-        7. sort
-        8. unique
-        9. remove
-        10. splice
-        11. erase
-        12. claer
-
-
-
-6. stack
-
-    特性
-
-    基本操作
-'
-        1. push
-        2. pop
-        3. top
-        4. size
-        5. empty
-
-7. queue
-
-    特性
-
-    基本操作
-
-        1. push
-        2. pop
-        3. front
-        4. back
-        5. size
-        6. empty
-
-8. heap
-
-    特性
-
-    基本操作
-
-        1. make_heap
-        2. push_heap
-        3. pop_heap
-        4. sort_heap
-
-9. priority_queue
-
-    特性
-
-    基本操作
-
-        1. push
-        2. pop
-        3. top
-        4, size
-        5. empty
-
-关联式容器
-1. set
-2. map
-3. multiset
-4. multimap
-
-**算法**
-
-**迭代器**
 
 
 ---
