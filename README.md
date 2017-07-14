@@ -23,19 +23,18 @@
 
 哲学中，整体与个体的关系是物质世界普遍存在的规律。上面各部分知识相对独立，既要有零又要有整才能收获更多，实战无疑是最好的。
 
-- [学习计划](https://github.com/linw7/Skill-Tree/blob/master/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92.md)
-
 - [纸上代码](https://github.com/linw7/Paper-Code)
+
+- [练手项目](https://github.com/linw7/TKeed)
 
 
 # 其他
 
 > 路过的豪杰麻烦右上角点一个star !
 
-更新同步问题：
+- [学习计划](https://github.com/linw7/Skill-Tree/blob/master/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92.md)
 
-[gitlab或github下fork后如何同步源的新更新内容？](https://www.zhihu.com/question/28676261)
-
+- [gitlab或github下fork后如何同步源的新更新内容？](https://www.zhihu.com/question/28676261)
 
 
 
