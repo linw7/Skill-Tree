@@ -237,10 +237,70 @@ STL内容虽然看起来很多，单独成书都不是问题（《STL源码剖�
 
 **vector**
 
-代码面前，了无秘密。=> [模拟Vector实现](https://github.com/linw7/Skill-Tree/blob/master/code/my_vector.cpp)
+用法：
 
+        定义：
+            vector<T> vec;
+        插入元素：
+            vec.push_back(element);
+            vec.insert(iterator, element);   
+        删除元素：
+            vec.pop_back();
+            vec.erase(iterator);
+        修改元素：
+            vec[position] = element;
+        遍历容器：
+            for(auto it = vec.begin(); it != vec.end(); ++it) {......}
+        其他：
+            vec.empty();    //判断是否空
+            vec.size();    // 实际元素
+            vec.capacity();    // 容器容量
+            vec.begin();    // 获得首迭代器
+            vec.end();    // 获得尾迭代器
+            vec.clear();    // 清空
+
+实现：
+
+[模拟Vector实现](https://github.com/linw7/Skill-Tree/blob/master/code/my_vector.cpp)
+
+- 线性表，数组实现。
+    - 支持随机访问。
+    - 插入删除操作需要大量移动数据。
+- 需要连续的物理存储空间。
+- 每当大小不够时，重新分配内存（*2），并复制原内容。
+
+错误避免：
+
+[迭代器失效](https://github.com/linw7/Skill-Tree/blob/master/code/vector_iterator.cpp)
+
+- 插入元素
+    - 尾后插入：size < capacity时，首迭代器不失效尾迭代实现（未重新分配空间），size == capacity时，所有迭代器均失效（需要重新分配空间）。
+    - 中间插入：size < capacity时，首迭代器不失效但插入元素之后所有迭代器失效，size == capacity时，所有迭代器均失效。
+
+- 删除元素
+    - 尾后删除：只有尾迭代失效。
+    - 中间删除：删除位置之后所有迭代失效。
 
 **map**
+
+用法：
+
+        定义：
+            mao<T_key, T_value> map;
+        插入元素：
+            map.insert(pair<T_key, T_value>(key, value));    // 同key不插入
+            map.insert(map<T_key, T_value>::value_type(key, value));    // 同key不插入
+            map[key] = value;    // 同key覆盖
+        删除元素：
+            map.erase(key);    // 按值删
+            map.erase(iterator);    // 按迭代器删
+        修改元素：
+            map[key] = new_value;
+        遍历容器：
+              for(auto it = vec.begin(); it != vec.end(); ++it) {......}
+
+实现：
+
 
 
 **set**
