@@ -20,9 +20,7 @@ int main() {
 	// servfd监听描述符，acceptfd连接描述符
 	int servfd, acceptfd;
 	struct sockaddr_in my_addr;
-	struct sockaddr_in their_addr;
 	// 创建套接字（IPv4 + TCP）
-	unsigned int sin_size, myport = 6666, lisnum = 10;
 	if((servfd == socket(AF_INET, SOCK_STREAM, 0) == -1)) {
 		perror("socket");
 		return -1;
@@ -40,14 +38,13 @@ int main() {
 		return -2;
 	}
 	printf("bind ok\n");
-	// 客户端描述符集合
+	
+	int maxsock = servfd;
 	fd_set client_fdset;
-	int maxsock;
 	struct timeval tv;
 	int client_sockfd[5];
 	bzero((void *)client_sockfd, sizeof(client_sockfd));
 	int conn_amount = 0;
-	maxsock = servfd;
 	char buffer[1024];
 	int ret = 0;
 
@@ -72,7 +69,7 @@ int main() {
 			printf("timeout \n");
 			continue;
 		}
-		// 遍历每一个已连上的client的fd，查看是否有数据
+		// 遍历每一个已连上的client的fd，查看是否有数据，conn_amount初始为0
 		for(int i = 0; i < conn_amount; ++i) {
 			if(FD_ISSET(client_sockfd[i], &client_fdset)){
 				printf("start recv from client[%d] : \n", i);
