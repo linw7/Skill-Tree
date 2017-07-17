@@ -30,10 +30,10 @@ int main(int argc, char const *argv[])
 		printf("Usage : Server IP address \n");
 		return -1;
 	}
-	connfd = sockfd(AF_INET, SOCK_STREAM, 0);
+	connfd = socket(AF_INET, SOCK_STREAM, 0);
 	client.sin_family = AF_INET;
 	client.sin_port = htons(DEFAULT_PORT);
-	client.sin_addr.s_addr = inet(argv[1]);
+	client.sin_addr.s_addr = inet_addr(argv[1]);
 	if(connfd < 0){
 		perror("socket");
 		return -1;
@@ -57,7 +57,7 @@ static void handle_connection(int sockfd){
 	pfds[1].events = POLLIN;
 	while(1){
 		poll(pfds, 2 , -1);
-		if(pfds[0].events & POLLIN){
+		if(pfds[0].revents & POLLIN){
 			n = read(sockfd, recvline, MAXLINE);
 			if(n == 0){
 				fprintf(stderr, "client : server is closed \n");
@@ -65,7 +65,7 @@ static void handle_connection(int sockfd){
 			}
 			write(STDOUT_FILENO, recvline, n);
 		}
-		if(pfds[1].events & POLLIN){
+		if(pfds[1].revents & POLLIN){
 			n = read(STDIN_FILENO, sendline, MAXLINE);
 			if(n == 0){
 				shutdown(sockfd, SHUT_WR);
