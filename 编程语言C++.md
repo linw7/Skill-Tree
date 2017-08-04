@@ -130,9 +130,9 @@ C/C++的内容又多又杂，常常看到有人罗列相关书单，觉得毫无
 
     - int const a和const int a均表示定义常量类型a。
     
-    - const int *a，其中a为指向int型变量的指针，const在 * 左侧，表示a指向不可变常量。
+    - const int *a，其中a为指向int型变量的指针，const在 * 左侧，表示a指向不可变常量。(看成const (*a)，对引用加const)
     
-    - int const *a，依旧是指针类型，表示a为指向整型数据的常指针。
+    - int *const a，依旧是指针类型，表示a为指向整型数据的常指针。(看成const(a)，对指针const)
 
 16. volatile有什么作用？
     - volatile定义变量的值是易变的，每次用到这个变量的值的时候都要去重新读取这个变量的值，而不是读寄存器内的备份。
