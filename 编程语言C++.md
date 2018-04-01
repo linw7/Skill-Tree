@@ -450,22 +450,24 @@ STL内容虽然看起来很多，单独成书都不是问题（《STL源码剖�
 用法：
 
         定义：
-            mao<T_key, T_value> map;
+            map<T_key, T_value> mymap;
 
         插入元素：
-            map.insert(pair<T_key, T_value>(key, value));    // 同key不插入
-            map.insert(map<T_key, T_value>::value_type(key, value));    // 同key不插入
-            map[key] = value;    // 同key覆盖
+            mymap.insert(pair<T_key, T_value>(key, value));    // 同key不插入
+            mymap.insert(map<T_key, T_value>::value_type(key, value));    // 同key不插入
+            mymap[key] = value;    // 同key覆盖
 
         删除元素：
-            map.erase(key);    // 按值删
-            map.erase(iterator);    // 按迭代器删
+            mymap.erase(key);    // 按值删
+            mymap.erase(iterator);    // 按迭代器删
 
         修改元素：
-            map[key] = new_value;
+            mymap[key] = new_value;
 
         遍历容器：
-              for(auto it = vec.begin(); it != vec.end(); ++it) {......}
+              for(auto it = mymap.begin(); it != mymap.end(); ++it) {
+                cout << it->first << " => " << it->second << '\n';
+              }
 
 实现：
 
