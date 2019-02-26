@@ -27,15 +27,4 @@
 
 - [练手项目](https://github.com/linw7/TKeed)
 
-
-# 其他
-
-> 路过的豪杰麻烦右上角点一个star !
-
-- [学习计划](https://github.com/linw7/Skill-Tree/blob/master/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92.md)
-
-- [gitlab或github下fork后如何同步源的新更新内容？](https://www.zhihu.com/question/28676261)
-
-
-
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
